@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rasabali1/Home/wishlist.dart';
 import 'package:rasabali1/food_screens/dessert_store.dart';
 import 'package:rasabali1/promo/promo_bar.dart';
+import 'package:rasabali1/res/app_colors.dart';
 import 'package:rasabali1/widgets/buildbox.dart';
 import 'package:rasabali1/widgets/circle.dart';
 
@@ -21,20 +23,77 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffc6e6fd),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 1),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildLocationAndIconsRow(),
-              const SizedBox(height: 16),
+              SizedBox(height: 12.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                        decoration: BoxDecoration(
+                            color: Colors.deepOrange,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Text(
+                          '17\nMins',
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    color: AppColors.whiTEColor,
+                                  ),
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'Delivery to Ghansoli',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
+                              Icon(Icons.abc),
+                            ],
+                          ),
+                          Text(
+                            'Power kidz,Power kids,kijamata nagar..',
+                            style: Theme.of(context).textTheme.bodySmall,
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(12.r),
+                    decoration: BoxDecoration(
+                        color: Colors.blueGrey,
+                        borderRadius: BorderRadius.circular(50.r)),
+                    child: Icon(Icons.person),
+                  )
+                ],
+              ),
+              SizedBox(height: 12.h),
               _buildSearchBar(),
+              // _buildLocationAndIconsRow(),
+              const SizedBox(height: 16),
               const SizedBox(height: 16),
               _buildCategoryList(),
               const SizedBox(height: 16),
-              _buildCarousel(),
+              // _buildCarousel(),
               const SizedBox(height: 16),
               _buildSpotlightSection(),
             ],

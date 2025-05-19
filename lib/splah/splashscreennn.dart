@@ -21,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox(), // Placeholder for symmetry or logo if needed
+                      const SizedBox(),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
