@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rasabali1/res/app_theme.dart';
-import 'package:rasabali1/splah/splashscreen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rasabali1/splah/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Flutter App',
           theme: AppTheme.lightTheme,
-          // darkTheme: AppTheme.darkTheme,
           debugShowCheckedModeBanner: false,
           home: SplashScreen(),
         );
